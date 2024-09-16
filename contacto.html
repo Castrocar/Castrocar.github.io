@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Taller Castrocar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init('GNjlEfHgobFLtobV6');
+    </script>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="/img/castrocar.jpg" alt="Logo de Castrocar">
+    </div>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="horario.html">Horario</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="contacto" class="contacto">
+                <h2>Contacto</h2>
+                <form id="contactForm">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+
+                    <label for="mensaje">Escribir un mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+
+                <section class="mapa">
+                    <h2>Localización</h2>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12063.136756748406!2d-3.573679!3d40.659787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4245b2b739259d%3A0x8937a17cf118893f!2sC.%20Destornillador%2C%2054%2C%2028400%20Collado%20Villalba%2C%20Madrid!5e0!3m2!1ses!2ses!4v1635354413668!5m2!1ses!2ses" allowfullscreen="" loading="lazy"></iframe>
+                </section>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Castrocar | C. Destornillador, 54, 28400 Collado Villalba, Madrid | Telf. 668506763 | <a href="avisoLegal.html">Aviso Legal</a></p>
+        </footer>
+    </div>
+    <script src="dom.js"></script>
+    <aside class="sidebar">
+        <button class="sidebar-toggle" aria-label="Abrir barra de navegación"><i class="fas fa-chevron-right"></i></button>
+        <nav class="social-nav">
+            <ul>
+                <li><a href="https://www.instagram.com/castrocar_carroceria/?igsh=MWo1ZXgwenl5NjcxMw%3D%3D" target="_blank" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.tiktok.com/@castro.car.carroc" target="_blank" class="social-link tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
+            </ul>
+        </nav>
+    </aside>
+    <a href="https://www.google.com/maps/place/Castro+Car/@40.6511942,-4.1400991,12z/data=!4m22!1m13!4m12!1m4!2m2!1d-4.093392!2d40.6772396!4e1!1m6!1m2!1s0xd4175c7d56153a1:0xcc2e1ed1cdca424a!2scastro+car+carroceria!2m2!1d-4.0237909!2d40.6271099!3m7!1s0xd4175c7d56153a1:0xcc2e1ed1cdca424a!8m2!3d40.6271099!4d-4.0237909!9m1!1b1!16s%2Fg%2F11vt9l2qm4?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" class="google-reviews-button" target="_blank" aria-label="Reseñas de Google">
+        <i class="fab fa-google"></i>
+    </a>
+    <a href="https://wa.me/668506763" class="whatsapp-button" target="_blank" aria-label="Chat en WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault()
+
+            const nombre = document.getElementById('nombre').value
+            const apellidos = document.getElementById('apellidos').value
+            const telefono = document.getElementById('telefono').value
+            const correo = document.getElementById('correo').value
+            const mensaje = document.getElementById('mensaje').value
+
+            emailjs.send('service_iltcpem', 'template_y2v64fw', {
+                nombre: nombre,
+                apellidos: apellidos,
+                telefono: telefono,
+                correo: correo,
+                mensaje: mensaje
+            })
+            .then(function(response) {
+                alert('Mensaje enviado exitosamente.')
+            }, function(error) {
+                alert('Error al enviar el mensaje. Inténtalo nuevamente.')
+            })
+        })
+    </script>
+</body>
+</html>

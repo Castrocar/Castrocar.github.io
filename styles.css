@@ -1,0 +1,561 @@
+html {
+    scroll-behavior: smooth;
+}
+/* Contenedor del logo con gradiente */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0) 50%), 
+                linear-gradient(to bottom, rgba(128, 0, 0, 0) 50%, #800000 100%);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 220px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #800000, #404040);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Efecto al pasar el mouse sobre los enlaces */
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #f00; 
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Mostrar la línea roja al pasar el mouse */
+nav a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Sombra al hacer clic en los enlaces */
+nav a:active {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    background-color: #555; 
+}
+
+/* Estilos para la sección "Sobre Nosotros" */
+.sobre-nosotros {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-nosotros h2 {
+    font-size: 2rem;
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+.sobre-nosotros p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.valores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.valor {
+    flex: 1 1 45%;
+    background: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.valor img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.valor h3 {
+    font-size: 1.5rem;
+    color: #800000; 
+    margin-bottom: 10px;
+}
+
+.valor p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.valor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .valores {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .valor {
+        flex: 1 1 100%;
+    }
+}
+
+/* Estilos para la sección "Aseguradoras" */
+.aseguradoras {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.aseguradoras h2 {
+    font-size: 2rem;
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    background: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-item img {
+    max-width: 50%;
+    height: auto; 
+    object-fit: contain; 
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+}
+
+/* Estilos para la barra de navegación desplegable */
+.sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #333;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 50px; 
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+.sidebar-toggle {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background-color: #444;
+}
+
+.social-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #333;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.social-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-nav li {
+    margin: 15px 0; 
+}
+
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #555;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link.instagram {
+    background-color: #e4405f; 
+}
+
+.social-link.tiktok {
+    background-color: #000;
+}
+
+.social-link:hover {
+    background-color: #333;
+    transform: scale(1.1);
+}
+
+.social-link:active {
+    background-color: #444;
+}
+
+/* Estado desplegado de la barra */
+.sidebar.open {
+    width: 200px;
+}
+
+.sidebar.open .social-nav {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilos para la sección "Aviso Legal" */
+.aviso-legal {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.aviso-legal h1 {
+    font-size: 2.5rem;
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+.aviso-legal h2 {
+    font-size: 1.8rem;
+    color: #800000; 
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.aviso-legal p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.aviso-legal ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.aviso-legal ul li {
+    margin-bottom: 10px;
+}
+
+/* Asegurarse de que el enlace del pie de página se alinee correctamente */
+footer p a {
+    color: #f00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer p a:hover {
+    color: #800000;
+}
+
+/* Estilos para el botón de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 1.3s ease;
+    z-index: 1000; 
+    text-decoration: none; 
+}
+
+.whatsapp-button i {
+    font-size: 30px; 
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.google-reviews-button {
+    position: fixed;
+    bottom: 100px; 
+    right: 20px; 
+    background-color: #4285F4;
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.google-reviews-button i {
+    font-size: 30px;
+}
+
+.google-reviews-button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para el formulario de contacto */
+.contacto {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contacto h2 {
+    font-size: 2rem;
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+.contacto label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contacto input, .contacto textarea {
+    width: 96%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contacto textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contacto button {
+    background-color: #800000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contacto button:hover {
+    background-color: #600000;
+}
+
+/* Estilos para el mapa */
+.mapa {
+    margin-top: 40px;
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 80%;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* Estilos específicos para la página de horario */
+.horario {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.horario h2 {
+    font-size: 2rem;
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+.horario p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.horario .horario-detalle {
+    background: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
